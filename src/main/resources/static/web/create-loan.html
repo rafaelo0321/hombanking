@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/styleManager.css">
+    <title>Home Banking | Rafael Niño Murillo | </title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row my-2">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light col text-center">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="#">Home Banking</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link" href="./manager.html">Manager</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="./create-loan.html">Create Loan</a>
+                          </li>
+                          <li class="nav-item">
+                            <button type="submit" class="btn btn-primary" @click="logout()">
+                                Close Section
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+                  <div class="col">
+                    <h1 class="text-center text-dark px-4">Loan Manager </h1>
+                    
+                </div>
+            </div>
+            <form class="row ">
+                <div class="form-floating mb-3 col-sm-12 col-md-6 col-lg-6">
+                    <h3>Name Loan:</h3>
+                    <input required type="text" class="form-control" v-model="formLoan.name" name="name"
+                        placeholder="Write the name of the loan">
+
+                </div>
+                <div class="form-floating mb-3 col-sm-12 col-md-6 col-lg-6">
+                    <h3>Maximum loan amount</h3>
+                    <input required type="number" class="form-control" v-model="formLoan.maxAmount" name="maxAmount">
+                </div>
+                <div class="form-floating mb-3 col-sm-12 col-md-6 col-lg-6">
+                    <h3>Percentage Interest rate</h3>
+                    <input required type="text" class="form-control" v-model="formLoan.loanInterest"
+                        name="loanInterest">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <h3>Selecciona la cantidad de cuotas</h3>
+                    <label><input type="checkbox" class="ms-2" :value="6" v-model="formLoan.paymentsLoans"> 6</label>
+                    <label><input type="checkbox" class="ms-2" :value="12" v-model="formLoan.paymentsLoans"> 12</label>
+                    <label><input type="checkbox" class="ms-2" :value="18" v-model="formLoan.paymentsLoans"> 18</label>
+                    <label><input type="checkbox" class="ms-2" :value="24" v-model="formLoan.paymentsLoans"> 24</label>
+                    <label><input type="checkbox" class="ms-2" :value="36" v-model="formLoan.paymentsLoans"> 36</label>
+                    <label><input type="checkbox" class="ms-2" :value="48" v-model="formLoan.paymentsLoans"> 48</label>
+                    <label><input type="checkbox" class="ms-2" :value="60" v-model="formLoan.paymentsLoans"> 60</label>
+                    <label><input type="checkbox" class="ms-2" :value="72" v-model="formLoan.paymentsLoans"> 72</label>
+                    <label><input type="checkbox" class="ms-2" :value="84" v-model="formLoan.paymentsLoans"> 84</label>
+                </div>
+                <div class="col-3 text-center">
+                    <button type="submit" class="btn btn-danger" @click="createLoan()">Create
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./js/manager.js"></script>
+</body>
+
+</html>

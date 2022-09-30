@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+#columna-container{
+    min-height: 100vh;
+}
+
+:root{
+    --offCanvas-width: 18rem;
+    --topNavegationHight:56px;
+    --colorBotones: #fff;
+}
+.offcanvas a{
+    text-decoration: none !important;
+    color: var(--colorBotones) !important;
+}
+.sidebar-navigation{
+    width: var(--offCanvas-width) !important;
+}
+.offcanvas-header{
+    color: var(--colorBotones) !important;
+}
+
+#myChart{
+    width: 30rem !important;
+}
+/* Media queries */
+@media (min-width: 992px) {
+    body{
+        overflow: auto !important;
+    }
+    main{
+        margin-left: var(--offCanvas-width) !important;
+    }
+    
+    .offcanvas-backdrop::before{
+        display: none;
+    }
+    .sidebar-navigation{
+        transform: none !important;
+        visibility: visible !important;
+        top: var(--topNavegationHight) !important;
+        height: calc(100% - var(--topNavegationHight));
+    }
+    
+}
+@media (min-width: 720px) {
+    .card{
+        width: 100% !important;
+    }
+    
+}
+.img-fondo{
+    background-image: url("../img/pexels-expect-best.jpg");
+    background-position:center;
+    border-radius: 25px;
+}
+h1{
+    text-shadow: 4px 2px 2px rgba(87, 73, 73, 0.815);
+}
+.img-fondo p{
+    text-shadow: 1px 1px 1px #212529;
+}

@@ -1,0 +1,118 @@
+.card-bank-t{
+	position: relative;
+    height: 270px;
+    width: 450px;
+    border-radius: 25px;
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+	background-image: url('../img/Titanium.png');
+    background-position: center;
+    cursor: pointer;
+}
+.card-bank-g{
+	position: relative;
+    height: 270px;
+    width: 450px;
+    border-radius: 25px;
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+	background-image: url('../img/Gold.png');
+    background-position: center;
+    cursor: pointer;
+}
+.card-bank-s{
+	position: relative;
+    height: 270px;
+    width: 450px;
+    border-radius: 25px;
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+	background-image: url('../img/Silver.png');
+    background-position: center;
+    cursor: pointer;
+}
+/* dentro de la cards */
+.logo-cards-bank-chip img,
+.logo-cards-bank-mastercard img,
+.number-cards-bank,
+.card-holder,
+.type-card,
+.to-date{
+    position: absolute;
+}
+.logo-cards-bank-chip img {
+    top: 30%;
+    left: 5%;
+    width: 25%;
+    height: auto;
+    opacity: 0.8;
+}
+.logo-cards-bank-mastercard img {
+    top: 8.5%;
+    right: 10%;
+    width: 20%;
+    height: auto;
+    opacity: 0.8;
+}
+.number-cards-bank,
+.card-holder,
+.type-card,
+.to-date{
+    color: #ffffffe8;
+    font-weight: 400;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 2.5px rgba(0, 0, 0, 0.8);
+}
+.number-cards-bank{
+    left: 10%;
+    bottom: 23%;
+    font-family: 'Courier New', Courier, monospace;
+}
+.card-holder{
+    font-size: 1.2rem;
+    left: 10%;
+    bottom: 8.5%;
+    color: #125ccc;
+}
+.type-card{
+    font-size: 1.5rem;
+    left: 10%;
+    top: 5%;
+}
+.type-card>span{
+    font-size: 1rem;
+}
+.to-date{
+    font-size: 1rem;
+    right: 10%;
+    bottom: 8.5%;
+}
+
+@media (max-width: 600px) {
+    .circles,.card-bank{
+        height: 180px;
+        width: 360px;
+    }
+    .circle-uno{
+        height: 90px;
+        width: 90px;
+        top: -20px;
+        left: -30px;
+    }
+    .circle-dos{
+        height: 100px;
+        width: 100px;
+        bottom: -25px;
+        right: -25px;
+        opacity: 0.8;
+    }
+    .card-holder,
+    .to-date{
+        font: 0.8em sans-serif;
+    }
+
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/styleAccounts.css">
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+  <title>Accounts</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <!-- offcanvas menu hamburguesa -->
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample">
+          <span class="navbar-toggler-icon" data-bs-target="#offcanvasExample"></span>
+        </button>
+        <!-- offcanvas menu hamburguesa -->
+        <a class="navbar-brand fw-bold me-auto" href="#"> <span class="text-primary">Home</span><span
+            class="text-danger">Banking</span> | <span class="text-white small"> Dashboard</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="bi bi-file-earmark-person"></span> {{nombreCliente.nameClient}}
+          {{nombreCliente.lastNameClient}}
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <form class="d-flex ms-auto" role="search">
+            <div class="input-group my-2 my-lg-0">
+              <!-- Buscador tener en cuenta para el futuro -->
+              <!-- <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <span class="input-group-text" id="basic-addon2"><i class="bi bi-search"></i></span> -->
+            </div>
+          </form>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                {{nombreCliente.nameClient}} {{nombreCliente.lastNameClient}}
+                <i class="bi bi-person-circle"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="./accounts.html">Transactions</a></li>
+                <li><a class="dropdown-item" href="./accounts.html">Loans</a></li>
+                <li><a class="dropdown-item" href="./cards.html">Cards</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" @click="logout">Close Section</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navigation -->
+
+    <!-- offCanvas -->
+
+    <div class="offcanvas offcanvas-start text-white sidebar-navigation bg-dark" tabindex="-1" id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header ">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel"><i class="bi bi-menu-button-wide-fill"></i>
+          <a href="./accounts.html">Center</a>
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+      </div>
+      <hr class="border border-danger border-1 opacity-100">
+      <div class="offcanvas-body p-0">
+        <nav class="navbar-dark">
+          <ul class="navbar-nav">
+            <li>
+              <div class="fw-bold px-3 my-2"><i class="bi bi-currency-exchange"></i> <span class="title"> <a
+                    href="./accounts.html">Accounts</a> </span></div>
+            </li>
+
+            <li>
+              <div class="fw-bold px-3 my-2"><i class="bi bi-wallet2"></i> <span class="title"> <a
+                    href="./cards.html">Cards</a> </span></div>
+            </li>
+            <li>
+              <div class="fw-bold px-3 my-2"><i class="bi bi-send-check"></i> <span class="title"> <a
+                    href="./transfers.html">Transfers</a> </span></div>
+            </li>
+            <li>
+              <div class="fw-bold px-3 my-2"><i class="bi bi-cash-coin"></i> <span class="title"> <a
+                    href="./loan-application.html">Loan Application</a> </span></div>
+            </li>
+
+            <li class="my-2">
+              <hr class="border border-danger border-1 opacity-100">
+            </li>
+            <li class="nav-link px-4">
+              <div class="fw-bold my-2"><i class="bi bi-gear"></i><span class="title"> Settings</span>
+              </div>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- offCanvas -->
+
+    <!-- Main -->
+    <main class="mt-5 pt-3">
+      <div class="container-fluid">
+        <div class="row shadow p-3 mb-5 bg-body rounded">
+
+          <div class="col-md-12 fs-3 text-center ">
+            <h1 class="fw-bold">Welcome {{nombreCliente.nameClient}} {{nombreCliente.lastNameClient}}</h1>
+            <p class="text-muted small">We always think about your financial well-being</p>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div>
+              <h4 class="text-muted h3 my-2">Choose the type account</h4>
+              <label>
+                <input type="radio" name="nomina" v-model="type_account" value="NOMINA" autofocus> NOMINA</label>
+              <br>
+              <label>
+                <input type="radio" name="correinte" v-model="type_account" value="CORRIENTE"> CORRIENTE</label>
+              <br>
+              <label>
+                <input type="radio" name="ahorros" v-model="type_account" value="AHORROS"> AHORROS</label>
+            </div>
+            <div>
+              <h4 class="text-muted h3 my-2">Choose the color of card</h4>
+              <label>
+                <input type="radio" name="silver" v-model="cardColor" value="SILVER" autofocus>SILVER</label>
+              <br>
+              <label>
+                <input type="radio" name="gold" v-model="cardColor" value="GOLD">GOLD</label>
+              <br>
+              <label>
+                <input type="radio" name="titaniem" v-model="cardColor" value="TITANIUM">TITANIUM</label>
+            </div>
+            <ul>
+              <li class="nav-link px-3 text-primary" v-if="removeButton">
+
+                <button type="submit" @click="createAccount" class="btn btn-success">
+                  <i class="bi bi-node-plus"></i>
+                  Create Account
+                </button>
+
+              </li>
+              <li v-else>
+                You can not enter more accounts
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="./img/img_fondo.png" class="img-responsive img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+
+
+  </div>
+  </main>
+  <!-- Main -->
+  </div>
+  <!-- JavaScript Bundle with Popper -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.2/dist/chart.min.js"
+    integrity="sha256-srZ7wC4CLlY0F9UFji68dTwYJQ5o93Quq2+iyQ4gH/I=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue@3"></script>
+
+
+  <script src="./js/create-accounts.js"></script>
+  <!-- <script src="./js/funsionalidad.js"></script> -->
+  <!-- <script src="./js/vanillaExtra.js"></script> -->
+
+</body>
+
+</html>

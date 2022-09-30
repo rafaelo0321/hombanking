@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/styleIndex.css">
+    <link rel="shortcut icon" href="./css/Favicon.png" type="image/x-icon">
+    <title>Welcome to my Home Banking</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- navigation -->
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <!-- offcanvas menu hamburguesa -->
+                <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <span class="navbar-toggler-icon" data-bs-target="#offcanvasExample"></span>
+                </button>
+                <!-- offcanvas menu hamburguesa -->
+                <a class="navbar-brand fw-bold me-auto" href="#"> <span class="text-primary">Home</span><span
+                        class="text-danger">Banking</span> | <span class="text-white small"> where your dreams become
+                        reality</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <form class="d-flex ms-auto" role="search">
+                        <div class="input-group my-2 my-lg-0">
+                            <!-- Buscador tener en cuenta para el futuro -->
+                            <!-- <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                      <span class="input-group-text" id="basic-addon2"><i class="bi bi-search"></i></span> -->
+                        </div>
+                    </form>
+                    <a href="./login.html" class="btn btn-danger m-1" tabindex="-1" role="button" aria-disabled="true">Login</a>
+                    <a href="./getInfo.html" class="btn btn-light m-1" tabindex="-1" role="button" aria-disabled="true">Get into</a>
+                </div>
+            </div>
+        </nav>
+        <div class="w-100 mt-5">
+            <br>
+            <br>
+        </div>
+        <main class="bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 ">
+
+                        <h1 class="mt-4 fs-1 titleMain">Welcome, we love your visit</h1>
+                        <p class="mt-3">Cumque error nemo id ducimus nihil dolorum doloribus consequuntur assumenda
+                            sapiente ad delectus reprehenderit corporis, alias laborum aspernatur ut maxime deleniti
+                            veritatis.</p>
+                        <a href="./login.html" class="btn btn-danger my-4" tabindex="-1" role="button" aria-disabled="true">
+                            Login</a>
+                    </div>
+                    <div class="col-6 ">
+                        <img src="./img/pexels-pixabay-50987.jpg"
+                            alt="personas en el banco" class="img-responsive img-fluid" />
+                    </div>
+                </div>
+                <div class="shadow p-3 mb-5 bg-body rounded">
+                    <h2 class="title my-2 text-center">Your Benefits</h2>
+                    <div class="row text-center" id="iconsBenefit">
+                        <div class="col-2">
+                            <i class="bi bi-currency-exchange"></i>
+                            <p>Financial alternative </p>
+                        </div>
+                        <div class="col-2"><i class="bi bi-piggy-bank"></i>
+                            <p>Payments</p>
+                        </div>
+                        <div class="col-2"><i class="bi bi-file-earmark-person"></i>
+                            <p>Subsidies</p>
+                        </div>
+                        <div class="col-2"><i class="bi bi-cash-coin"></i>
+                            <p>Savings</p>
+                        </div>
+                        <div class="col-2"><i class="bi bi-file-earmark-lock2"></i>
+                            <p>Security</p>
+                        </div>
+                        <div class="col-2"><i class="bi bi-question-circle"></i>
+                            <p>Center Help</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 my-3">
+                        <h2>Thinking of you we recommend our credits</h2>
+                    </div>
+                    <div class="col-6">
+                        <div class="card">
+                            <img src="img/pexels-pixabay-259209.jpg"
+                            class="card-img-top img-fluid" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Many money</h5>
+                                <p class="card-text">This is a longer card with supporting text lead-in to additional
+                                    content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a href="./getInfo.html" class="btn btn-outline-dark m-3 ">Get now</a>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card bgCardCenter">
+                            <img src="img/pexels-joslyn-pickens-3848193.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Max Amount</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a href="./getInfo.html" class="btn btn-outline-dark m-3 ">Get now</a>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card bgCardLeft">
+                            <img src="./img/pexels-cottonbro-3943723.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Credit and Debit</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to additional content.</p>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a href="./getInfo.html" class="btn btn-outline-dark m-3 ">Get now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-5 text-center align-items-center">
+                    <div class="col-12 my-3">
+                        <h2>we solve your doubts, any means is valid</h2>
+                    </div>
+                    <div class="col-2">
+                        <i class="contactIcons bi bi-pin-map"></i>
+                        <p>Points of attention
+                        </p>
+                        <a href="#" class="btn btn-outline-dark m-3 ">Visit us</a>
+                    </div>
+                    <div class="col-2">
+                        <i class="contactIcons bi bi-chat-left-dots"></i>
+                        <p>Chat online
+                        </p>
+                        <a href="#" class="btn btn-outline-dark m-3">Write us</a>
+                    </div>
+                    <div class="col-3">
+                        <i class="contactIcons bi bi-phone"></i>
+                        <p>Call us at our line
+                        </p>
+                        <a href="#" class="btn btn-outline-dark m-3">01 8000 77 7777</a>
+                    </div>
+                    <div class="col-3">
+                        <i class="contactIcons bi bi-telephone"></i>
+                        <p>We call you
+                        </p>
+                        <a href="#" class="btn btn-outline-dark m-3">Give us your number</a>
+                    </div>
+                    <div class="col-2">
+                        <i class="contactIcons bi bi-megaphone"></i>
+                        <p>Contact us through social networks</p>
+                        <a href="#" class="text-dark  m-3">
+                            <i class="bi bi-whatsapp"></i>
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row my-5 align-items-center ">
+                    <div class="col-12 text-center">
+                        <h2>Our products</h2>
+                    </div>
+                    <div class="col-6 bg-white ">
+                        <div class="container my-5">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p>Credits</p>
+                                    <h3>Finance what you dream, want and need</h3>
+                                    <p>Dolor, alias, est, facere ea nulla nesciunt a fugit atque debitis repudiandae
+                                        quod fuga odio dolorem obcaecati.</p>
+                                    <a href="./getInfo.html" class="btn btn-outline-dark m-3 ">Know more</a>
+                                </div>
+                                <div class="col-6 text-end align-self-center ">
+                                    <img src="./img/smiling-.jpg"
+                                        class="img-fluid" alt="Imgen del producto">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 bg-white">
+                        <img src="img/bank-clients-positive.jpg"
+                            class="card-img-top" alt="Imgen del producto">
+                        <div class="card-body">
+                            <p>Credits</p>
+                            <h5 class="card-title">Finance what you dream, want and need</h5>
+                            <p class="card-text small">This card with supporting text lead-in to
+                                additional content.</p>
+                            <a href="./getInfo.html" class="btn btn-outline-dark m-3 ">Know more</a>
+                        </div>
+                    </div>
+                    <div class="col-3 bg-white">
+                        <img src="img/pago-tarjeta-credito-compra-venta-productos-servicios_1150-16379.jpg"
+                        class="card-img-top" alt="Imgen del producto">
+                        <div class="card-body">
+                            <p>Credits</p>
+                            <h5 class="card-title">Finance what you dream, want and need</h5>
+                            <p class="card-text small">This card with supporting text lead-in to additional content.
+                            </p>
+                            <a href="./getInfo.html" class="btn btn-outline-dark m-3 ">Know more</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row my-5">
+                    <h2 class="text-center py-3 my-3">Select a product category</h2>
+                    <div class="col-3">
+                        <h4> <i class="bi bi-pin-map"></i> Accounts and deposits</h4>
+                        <p>
+                            Rates associated with savings and current accounts, debit and prepaid cards, Bancol-3ombia at hand, savings book.
+                            </p>
+                    </div>
+                    <div class="col-3">
+                        <h4> <i class="bi bi-pin-map"></i> Credit cards</h4>
+                        <p>
+                            
+                            Fees associated with Visa, MasterCard and American Express credit cards.</p>
+                    </div>
+                    <div class="col-3">
+                        <h4> <i class="bi bi-pin-map"></i> Credits</h4>
+                        <p>
+                            Rates associated with consumer loans, microcredit, revolving commercial portfolio quotas, real estate solution and builder. </p>
+                    </div>
+                    <div class="col-3">
+                        <h4> <i class="bi bi-pin-map"></i>  Transactional services for your company</h4>
+                        <p>Fees associated with your company's accounts receivable and payable solutions.</p>
+                    </div>
+                    <div class="col-3">
+                        <h4> <i class="bi bi-pin-map"></i> Insurance</h4>
+                        <p>
+                            Rates associated with voluntary life, health, pet, unemployment insurance, among others.</p>
+                    </div>
+                    <div class="col-3">
+                        <h4> <i class="bi bi-pin-map"></i> Foreign currency</h4>
+                        <p>
+                            Fees associated with letters of credit, collections, financed drafts and local ME bank guarantees.</p>
+                    </div>
+                    <div class="col-3">
+                        <h4> <i class="bi bi-pin-map"></i>  Investments</h4>
+                        <p>
+                            Fees associated with mutual funds, shares, derivatives, foreign exchange, money market and fixed income.</p>
+                    </div>
+                    <div class="col-3">
+                        <h4> <i class="bi bi-pin-map"></i>  Other services</h4>
+                        <p>
+                        Fees associated with national wire transfers, withdrawals with cards from other countries and local ML bank guarantees.</p>
+                    </div>
+                    
+
+                </div>
+
+
+        </main>
+        <footer class="footer bg-dark">
+            <div class="container">
+            <div class="row">
+                <div class="col text-white m-3">
+                    <h3>Personas</h3>
+                    <ul>
+                        <li class="p-2">Benefits</li>
+                         <li class="p-2">Send and receive money</li>
+                         <li class="p-2">Bancolombia at hand</li>
+                         <li class="p-2">Payments</li>
+                         <li class="p-2">Segments</li>
+                         <li class="p-2">Channels</li>
+                    </ul>
+                </div>
+                <div class="col text-white m-3">
+                    <h3>It may interest you</h3>
+                    <ul>
+                        <li class="p-2">
+                            Financial Education
+                            </li>
+                        <li class="p-2">Legal Information Colombia
+                            </li>
+                        <li class="p-2">Terms of use
+                            </li>
+                        <li class="p-2">Sale of used
+                            </li>
+                        <li class="p-2">Tariff
+                            </li>
+                        <li class="p-2">Group Home Banking</li>
+                    </ul>
+                </div>
+                <div class="col text-white m-3">
+                    <h3>Group Home Banking</h3>
+                    <ul>
+                        <li class="p-2">Providers</li>
+                        <li class="p-2">Work with us</li>
+                        <li class="p-2">Financial consumer, requirements and advocate</li>
+                        <li class="p-2">Accessibility</li>
+                        <li class="p-2">Frequent questions</li>
+                        <li class="p-2">Insurance bidding process 2021-2023</li>
+                    </ul>
+                </div>
+                <div class="col text-white m-3">
+                    <h3>Contact us</h3>
+                    <ul>
+                        <li class="p-2">Car 48 # 26 - 85 Medellín – Colombia.
+                            </li>
+                        <li class="p-2">Bogotá (60 1) 343 00 00
+                            </li>
+                        <li class="p-2">Medellín (60 4) 510 90 00
+                            </li>
+                        <li class="p-2">Cali (60 2) 554 05 05
+                            </li>
+                        <li class="p-2">Cartagena (60 5) 693 44 00
+                            </li>
+                        <li class="p-2">From the outside +57 (60 1) 343 00 00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </footer>
+
+    </div>
+</body>
+
+<!-- JavaScript Bundle with Popper -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.2/dist/chart.min.js"
+    integrity="sha256-srZ7wC4CLlY0F9UFji68dTwYJQ5o93Quq2+iyQ4gH/I=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@3"></script>
+<!-- <script src="./js/funsionalidad.js"></script>
+ -->
+</body>
+
+</html>

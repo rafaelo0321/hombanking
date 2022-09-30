@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/styleAccounts.css">
+    <link rel="stylesheet" href="./css/styleTransfers.css">
+
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <title>Accounts</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- navigation -->
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <!-- offcanvas menu hamburguesa -->
+                <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <span class="navbar-toggler-icon" data-bs-target="#offcanvasExample"></span>
+                </button>
+                <!-- offcanvas menu hamburguesa -->
+                <a class="navbar-brand fw-bold me-auto" href="#"> <span class="text-primary">Home</span><span
+                        class="text-danger">Banking</span> | <span class="text-white small"> Dashboard</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="bi bi-file-earmark-person"></span> {{clientAutentication.nameClient}}
+                    {{clientAutentication.lastNameClient}}
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <form class="d-flex ms-auto" role="search">
+                        <div class="input-group my-2 my-lg-0">
+                        </div>
+                    </form>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                {{clientAutentication.nameClient}} {{clientAutentication.lastNameClient}}
+                                <i class="bi bi-person-circle"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="./accounts.html">Transactions</a></li>
+                                <li><a class="dropdown-item" href="./accounts.html">Loans</a></li>
+                                <li><a class="dropdown-item" href="./cards.html">Cards</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" @click="logout">Close Section</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- navigation -->
+
+        <!-- offCanvas -->
+
+        <div class="offcanvas offcanvas-start text-white sidebar-navigation bg-dark" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header ">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel"><i class="bi bi-menu-button-wide-fill"></i>
+                    <a href="./accounts.html">Center</a>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+            </div>
+            <hr class="border border-danger border-1 opacity-100">
+            <div class="offcanvas-body p-0">
+                <nav class="navbar-dark">
+                    <ul class="navbar-nav">
+                        <li>
+                            <div class="fw-bold px-3 my-2"><i class="bi bi-currency-exchange"></i> <span class="title">
+                                    <a href="./accounts.html">Accounts</a> </span></div>
+                        </li>
+                        <li>
+                            <div class="fw-bold px-3 my-2"><i class="bi bi-wallet2"></i> <span class="title"> <a
+                                        href="./cards.html">Cards</a> </span></div>
+                        </li>
+                        <li>
+                            <div class="fw-bold px-3 my-2"><i class="bi bi-send-check"></i> <span class="title"> <a
+                                        href="./transfers.html">Transfers</a> </span></div>
+                        </li>
+                        <li>
+                            <div class="fw-bold px-3 my-2"><i class="bi bi-cash-coin"></i> <span class="title"> <a
+                                        href="./loan-application.html">Loan Application</a> </span></div>
+                        </li>
+                        <li class="my-2">
+                            <hr class="border border-danger border-1 opacity-100">
+                        </li>
+                        <li class="nav-link px-4">
+                            <div class="fw-bold my-2"><i class="bi bi-gear"></i><span class="title"> Settings</span>
+                            </div>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- offCanvas -->
+
+        <!-- Main -->
+        <main class="mt-5 pt-3">
+            <div class="container-fluid">
+                <div class="row shadow p-3 mb-5 bg-body rounded">
+                    <div class="col-md-12  fs-3 text-center">
+                        <h1 class="fw-bold">Welcome {{clientAutentication.nameClient}}
+                            {{clientAutentication.lastNameClient}}
+                        </h1>
+                        <p class="text-muted small">We always think about your financial well-being</p>
+                    </div>
+                </div>
+
+                <div class="row container-from">
+                    <div class="col" v-for="(accountCero, index) in transfersData" ::key="index"
+                        v-if="transfersData.length == 0">
+                        <p>You have no balance in your account</p>
+                    </div>
+                    <form class="form-group form-transfer col ps-2 ms-3" v-else>
+                        <div>
+                            <div>
+                                <h5 class="text-muted small">Choose the account where you want to transfer the money
+                                </h5>
+                                <select name="select account" v-model="originNumber">
+                                    <option value="Sin valor" disabled selected>choose an account</option>
+                                    <option :value="account.numberAccount" v-for="account in transfersData"
+                                        :class="account.balanceAccount != 0 ? 'text-primary' : 'disabledoptions'">
+                                        {{account.balanceAccount != 0 ? (account.numberAccount):""}}
+                                    </option>
+                                </select>
+                            </div>
+                            <label class="p-3">
+                                <input type="radio" name="Own account" v-model="typeAccount" value="own_account"> Own
+                                account
+                            </label>
+                            <label class="p-3">
+                                <input type="radio" name="Third party account" v-model="typeAccount"
+                                    value="thirdPartyAccount" autofocus> Third party account
+                            </label>
+
+                            <div v-if="typeAccount == 'own_account'">
+                                <div class="text-muted">
+                                    Choose the account to which you want to transfer the funds
+                                    <br>
+                                    <select name="select account" v-model="destinyNumber">
+                                        <option value="Sin valor" disabled selected>choose an account</option>
+                                        <option :value="account.numberAccount" v-for="account in transfersData"
+                                            :class="account.numberAccount === originNumber ? 'disabledoptions' : 'text-primary'">
+                                            {{account.numberAccount}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div v-else>
+                                <label class="text-muted">
+                                    Write your account number. It starts with the acronym VIN
+                                    <br>
+                                    <input class="text-uppercase"
+                                        v-if="originNumber != destinyNumber || destinyNumber === ''" type="text"
+                                        v-model="destinyNumber" placeholder="VIN00000000" maxlength="11"
+                                        pattern="[A-Za-z0-9]{11}"
+                                        title="This field only supports 11 characters and is required" required>
+                                    <p v-else class="text-danger">check the account number, it is the same as the
+                                        outgoing account</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="py-2">
+                                Amount Value <br>
+                                <input placeholder="$0000" type="text" v-model="amount" pattern="[0-9]{11}" required>
+                            </label>
+                            <br>
+                            <label class="py-2">
+
+                                Description of the money transfer
+                                <br>
+                                <input placeholder="write the reason for the shipment"
+                                    title="write the reason for the shipment" type="text" v-model="description"
+                                    required>
+                                <br>
+                            </label>
+                        </div>
+                        <div class="p-3">
+                            <button
+                                v-if="(amount === '') || (description === '' ) || (destinyNumber === '') || (originNumber === '')"
+                                type="button" class="btn btn-success" data-bs-toggle="modal" disabled
+                                data-bs-target="#exampleModal">
+                                Create Transfer
+                            </button>
+                            <button v-else type="button" class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Create Transfer
+                            </button>
+                        </div>
+                    </form>
+                    <div class="col">
+                        <img src="./img/fondoTransactions.jpg" alt="fondo transaction" class="img-fond img-responsive">
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Confirm</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="p-2">Are you sure to make the transfer <i
+                                        class="bi bi-patch-question text-danger"></i></p>
+
+                                Press <span class="badge text-bg-primary">Save Transfer</span> to confirm your
+                                transaction or <span class="badge bg-secondary">Close</span> to cancel
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" @click.prevent="createTransfer">Save
+                                    Transfer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Main -->
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.2/dist/chart.min.js"
+        integrity="sha256-srZ7wC4CLlY0F9UFji68dTwYJQ5o93Quq2+iyQ4gH/I=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./js/transfers.js"></script>
+
+</body>
+
+</html>

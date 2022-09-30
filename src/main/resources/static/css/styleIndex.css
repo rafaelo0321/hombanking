@@ -1,0 +1,40 @@
+:root {
+    --colorHover:#BB2D3B;
+    --colorCard:#fd7e14;
+    --colorCardDos:#d63384;
+}
+.titleMain{
+    font-size: 3rem !important;
+    font-weight: bold !important;
+    text-shadow: 0.3rem .5rem .5rem rgba(234,123,255 .075) !important;
+}
+#iconsBenefit i{
+    font-size: 2.5rem;
+}
+#iconsBenefit i:hover{
+    color: var(--colorHover);
+}
+.contactIcons{
+    font-size: 3rem;
+}
+.contactIcons:hover{
+    color: var(--colorHover);
+}
+.card {
+    height: 27rem !important;
+    background: var(--colorCard) !important;
+    color: #fff;
+}
+.card img{
+    width: auto;
+    height: 15rem !important;
+}
+.bgCardCenter{
+    background: var(--colorHover) !important;
+}
+.bgCardLeft{
+    background: var(--colorCardDos) !important;
+}
+.houseProduct{
+    font-size: 15rem;
+}

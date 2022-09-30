@@ -1,0 +1,12 @@
+.container-from{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.disabledoptions{
+    display: none;
+}
+.img-fond{
+    width: 100%;
+}
